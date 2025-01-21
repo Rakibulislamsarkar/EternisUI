@@ -66,7 +66,7 @@ export default function Motion() {
               </Button>
             </Link>
             <a
-              href='https://github.com/ibelick/motion-primitives'
+              href='https://github.com/Rakibulislamsarkar/EternisUI'
               target='_blank'
               rel='noopener noreferrer'
             >
