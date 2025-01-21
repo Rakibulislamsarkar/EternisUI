@@ -47,15 +47,14 @@ export default function Motion() {
       <div className='px-6 py-4 pb-20'>
         <section className='flex h-full flex-col justify-center pt-10'>
           <span className='mb-4 mt-2 text-start text-xs text-zinc-500 dark:text-zinc-400 md:text-sm'>
-            Free updates and new components released regularly.
+          Free regular updates and new components added.
           </span>
-          <div className='flex w-full max-w-lg flex-col items-center justify-center text-start'>
+          <div className='flex w-full max-w-xl flex-col items-center justify-center text-start'>
             <h1 className='relative mb-4 text-4xl font-medium text-zinc-950 dark:text-zinc-50'>
-              UI kit to make beautiful, animated interfaces, faster.
+            UI kit for faster creation of stunning, animated interfaces.
             </h1>
             <p className='text-start text-zinc-600 dark:text-zinc-200'>
-              Beautifully designed motions components. Easy copy-paste.
-              Customizable. Open Source. Built for engineers and designers.
+            Beautiful components. Copy-paste ready, customizable, open-source, and designed for engineers and designers.
             </p>
           </div>
           <div className='flex items-center space-x-4 py-6'>
