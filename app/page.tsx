@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { MorphingDialogBasicOne } from '@/app/docs/morphing-dialog/morphing-dialog-basic-1';
-import XIcon from '@/components/website/icons/x';
 import GitHubIcon from '@/components/website/icons/github';
-import ThemeSwitch from '@/components/website/theme-switch';
 import Popover from '@/components/core/popover';
 import { ChevronRight } from 'lucide-react';
 import { CardExampleLanding } from '@/components/website/card-example-landing';
@@ -12,14 +10,12 @@ import { InViewImagesGrid } from '@/app/docs/in-view/in-view-images-grid';
 import { InfiniteSliderHoverSpeed } from '@/app/docs/infinite-slider/infinite-slider-hover-speed';
 import { Cursor1 } from '@/app/docs/cursor/cursor-1';
 import { SegmentedControl } from '@/app/docs/animated-background/segmented-control';
-import { MPLogo } from '@/components/website/icons/motion-primitives-logo';
-import LaunchBanner from '@/components/website/launch-banner';
 import { TextLoopBasic } from './docs/text-loop/text-loop-basic';
 import { TextShimmerBasic } from './docs/text-shimmer/text-shimmer-basic';
-import { TextScrambleCustomTrigger } from './docs/text-scramble/text-scramble-custom-trigger';
 import { BorderTrailCard1 } from './docs/border-trail/border-trail-card-1';
 import { TextEffectSpeed } from './docs/text-effect/text-effect-speed';
 import { TextScrambleBasic } from './docs/text-scramble/text-scramble-basic';
+import MainNav from '@/components/website/main-nav';
 
 function Button({
   children,
@@ -44,48 +40,11 @@ function Button({
   );
 }
 
-function Header() {
-  return (
-    <header className='relative top-0 z-10 bg-white px-6 py-5 dark:border-white/10 dark:bg-zinc-950 lg:z-10 lg:flex lg:h-16 lg:items-center lg:px-8 lg:py-0'>
-      <div className='mx-auto flex w-full items-center justify-between md:max-w-7xl'>
-        <a href='/' className='relative flex items-center space-x-2'>
-          <MPLogo className='h-6 w-auto' />
-          <div className='text-sm font-medium text-zinc-950 dark:text-white'>
-            motion-primitives
-          </div>
-          <span className='mb-4 ml-2 select-none rounded bg-zinc-800 px-1.5 py-0.5 text-[10px] font-medium text-zinc-50'>
-            beta
-          </span>
-        </a>
-        <nav className='flex items-center gap-2'>
-          <a
-            href='https://twitter.com/Ibelick'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex h-9 w-9 items-center justify-center'
-          >
-            <XIcon className='h-4 w-4 fill-zinc-950 dark:fill-white' />
-          </a>
-          <a
-            href='https://github.com/ibelick/motion-primitives'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex h-9 w-9 items-center justify-center'
-          >
-            <GitHubIcon className='h-4 w-4 fill-zinc-950 dark:fill-white' />
-          </a>
-          <ThemeSwitch />
-        </nav>
-      </div>
-    </header>
-  );
-}
 
 export default function Motion() {
   return (
     <>
-      <LaunchBanner />
-      <Header />
+      <MainNav />
       <div className='px-6 py-4 pb-20'>
         <section className='flex h-full flex-col items-center justify-center pt-20'>
           <div className='flex w-full max-w-lg flex-col items-center justify-center text-center'>

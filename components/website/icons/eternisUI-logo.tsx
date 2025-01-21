@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
 
-export function MPLogo(props: SVGProps<SVGSVGElement>) {
+export function EternisLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       role='img'

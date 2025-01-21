@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MPLogo } from './icons/motion-primitives-logo';
+import { MPLogo } from './icons/eternisUI-logo';
 import XIcon from './icons/x';
 import GitHubIcon from './icons/github';
 import ThemeSwitch from './theme-switch';

@@ -8,7 +8,7 @@ import { GeistMono } from 'geist/font/mono';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Motion-Primitives',
+  title: 'EternisUI',
   description:
     'UI kit to make beautiful, animated interfaces, faster. Open-source and customizable.',
 };
