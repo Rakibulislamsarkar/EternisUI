@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect, useRef } from 'react';
 import { TableOfContents } from '@/components/website/table-of-contents';
-import LaunchBanner from '@/components/website/launch-banner';
-import { Header } from '@/components/website/header';
 import { motion } from 'motion/react';
 import { NAVIGATION } from './navigation';
+import MainNav from '@/components/website/main-nav';
 
 function NavigationDesktop() {
   const pathname = usePathname();
@@ -130,8 +129,7 @@ export default function ComponentLayout({
 }) {
   return (
     <>
-      <LaunchBanner />
-      <Header />
+      <MainNav />
       <div className='px-6 lg:px-8'>
         <div className='mx-auto md:max-w-7xl'>
           <div className='mx-auto flex w-full flex-col items-start md:flex-row md:space-x-12'>
