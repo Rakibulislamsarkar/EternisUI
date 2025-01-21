@@ -6,7 +6,7 @@ import { EternisLogo } from './icons/eternisUI-logo';
 
 const MainNav = () => {
   return (
-    <header className='relative top-0 z-10 bg-white px-6 py-5 dark:border-white/10 dark:bg-zinc-950 lg:z-10 lg:flex lg:h-16 lg:items-center lg:px-8 lg:py-0'>
+    <header className='relative top-0 z-10 bg-white px-6 py-5 dark:border-white/10 dark:bg-zinc-950 lg:z-10 lg:flex lg:h-14 lg:items-center lg:px-8 lg:py-0 border-b'>
       <div className='flex w-full items-center justify-between'>
         <a href='/' className='relative flex items-center space-x-2'>
           <EternisLogo className='h-6 w-auto' />

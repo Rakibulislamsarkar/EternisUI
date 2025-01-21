@@ -40,18 +40,20 @@ function Button({
   );
 }
 
-
 export default function Motion() {
   return (
     <>
       <MainNav />
       <div className='px-6 py-4 pb-20'>
-        <section className='flex h-full flex-col items-center justify-center pt-20'>
-          <div className='flex w-full max-w-lg flex-col items-center justify-center text-center'>
+        <section className='flex h-full flex-col justify-center pt-10'>
+          <span className='mb-4 mt-2 text-start text-xs text-zinc-500 dark:text-zinc-400 md:text-sm'>
+            Free updates and new components released regularly.
+          </span>
+          <div className='flex w-full max-w-lg flex-col items-center justify-center text-start'>
             <h1 className='relative mb-4 text-4xl font-medium text-zinc-950 dark:text-zinc-50'>
               UI kit to make beautiful, animated interfaces, faster.
             </h1>
-            <p className='text-center text-zinc-600 dark:text-zinc-200'>
+            <p className='text-start text-zinc-600 dark:text-zinc-200'>
               Beautifully designed motions components. Easy copy-paste.
               Customizable. Open Source. Built for engineers and designers.
             </p>
@@ -74,9 +76,6 @@ export default function Motion() {
               </Button>
             </a>
           </div>
-          <span className='mt-2 text-center text-sm text-zinc-500 dark:text-zinc-400'>
-            Free updates and new components released regularly.
-          </span>
         </section>
         <section className='mx-auto max-w-3xl py-32'>
           <CardExampleLanding>
