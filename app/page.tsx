@@ -16,6 +16,7 @@ import { BorderTrailCard1 } from './docs/border-trail/border-trail-card-1';
 import { TextEffectSpeed } from './docs/text-effect/text-effect-speed';
 import { TextScrambleBasic } from './docs/text-scramble/text-scramble-basic';
 import MainNav from '@/components/website/main-nav';
+import { Features } from '@/components/section/features';
 
 function Button({
   children,
@@ -45,7 +46,7 @@ export default function Motion() {
     <>
       <MainNav />
       <div className='px-6 py-4 pb-20'>
-        <section className='flex h-full flex-col justify-center pt-10'>
+        <section className='flex h-full flex-col justify-center pt-10 dark:border-white/10 border-b pb-10'>
           <span className='mb-4 mt-2 text-start text-xs text-zinc-500 dark:text-zinc-400 md:text-sm'>
           Free regular updates and new components added.
           </span>
@@ -76,75 +77,9 @@ export default function Motion() {
             </a>
           </div>
         </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding>
-            <MorphingDialogBasicOne />
-          </CardExampleLanding>
+        <section>
+          <Features />
         </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding hasReTrigger>
-            <AnimatedGroupPreset />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding
-            className='px-8 md:px-20 [&>div]:h-52 [&>div]:justify-start'
-            hasReTrigger
-          >
-            <TextEffectSpeed />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding hasReTrigger>
-            <InViewImagesGrid />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding className='px-0'>
-            <InfiniteSliderHoverSpeed />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding>
-            <Cursor1 />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding className='px-8 md:px-20 [&>div]:h-52 [&>div]:justify-start'>
-            <TextLoopBasic />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding className='px-8 md:px-20 [&>div]:h-52 [&>div]:justify-start'>
-            <TextShimmerBasic />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding
-            className='px-8 md:px-20 [&>div]:h-52 [&>div]:justify-start'
-            hasReTrigger
-          >
-            <TextScrambleBasic />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding>
-            <Popover />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding>
-            <BorderTrailCard1 />
-          </CardExampleLanding>
-        </section>
-        <section className='mx-auto max-w-3xl py-32'>
-          <CardExampleLanding>
-            <SegmentedControl />
-          </CardExampleLanding>
-        </section>
-        <div className='text-center text-sm text-zinc-500 dark:text-zinc-400'>
-          <Link href='/docs'>and more...</Link>
-        </div>
       </div>
     </>
   );
