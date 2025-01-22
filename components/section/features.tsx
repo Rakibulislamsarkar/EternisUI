@@ -12,26 +12,25 @@ import {
 const features = [
   {
     number: '01',
-    title: 'Beautiful Components',
+    title: 'Elegant UI Components',
     description:
-      "Beautiful components built with React, TypeScript, and Tailwind CSS. From buttons to complex data tables, we've got you covered with our battle-tested designs.",
+      'Crafted with React, TypeScript, and Tailwind CSS, these sleek components range from basic buttons to advanced data tables, designed to elevate your projects.',
     image: '/picture_1.webp',
   },
   {
     number: '02',
-    title: 'Ready-to-use Templates',
+    title: 'Pre-Built Templates',
     description:
-      "Landing pages, dashboards, and app templates ready for production. From marketing sites to admin panels, we've got everything you need to ship products faster.",
+      'Speed up development with ready-made templates for landing pages, dashboards, and apps. Perfect for launching products efficiently.',
     image: '/picture_3.webp',
   },
   {
     number: '03',
-    title: 'Ship Faster',
+    title: 'Deliver with Speed',
     description:
-      'Focus on your product, not on building UI components. From startups to enterprises, our battle-tested designs help you convert visitors into happy customers.',
+      'Spend time refining your product while leveraging our polished components to turn visitors into satisfied customers.',
     image: '/picture_4.webp',
   },
-  
 ];
 
 function FeatureCard({
@@ -57,23 +56,20 @@ function FeatureCard({
         ease: [0.16, 1, 0.3, 1],
       }}
       viewport={{ once: true }}
+      className='min-w-[280px] md:min-w-[320px] lg:min-w-[360px]'
     >
-      <Card className='group relative flex min-h-[400px] flex-col overflow-hidden border-none'>
-        {/* Background Image */}
+      <Card className='group relative flex min-h-[550px] flex-col overflow-hidden border-none'>
         <div
           className='absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110'
           style={{ backgroundImage: `url(${image})` }}
         />
-        {/* Gradient Overlay */}
         <div className='absolute inset-0 bg-gradient-to-b from-black/60 to-black/90' />
-
-        {/* Content */}
         <div className='relative z-10 flex h-full flex-col justify-between'>
           <CardHeader className='p-6 pb-0'>
             <div className='mb-4 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-sm font-medium text-white backdrop-blur-sm'>
               {number}
             </div>
-            <CardTitle className=   'text-lg text-white'>{title}</CardTitle>
+            <CardTitle className='text-lg text-white'>{title}</CardTitle>
           </CardHeader>
           <CardContent className='mt-auto p-6 pt-4'>
             <p className='text-sm text-white/70'>{description}</p>
@@ -95,7 +91,7 @@ export function Features() {
           viewport={{ once: true }}
         >
           <h2 className='mb-4 text-xl tracking-tight sm:max-w-xl sm:text-xl'>
-            Build stunning products faster.
+            Create exceptional products effortlessly.
           </h2>
         </motion.div>
       </div>

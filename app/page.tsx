@@ -1,22 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import { MorphingDialogBasicOne } from '@/app/docs/morphing-dialog/morphing-dialog-basic-1';
 import GitHubIcon from '@/components/website/icons/github';
-import Popover from '@/components/core/popover';
 import { ChevronRight } from 'lucide-react';
-import { CardExampleLanding } from '@/components/website/card-example-landing';
-import { AnimatedGroupPreset } from '@/app/docs/animated-group/animated-group-preset';
-import { InViewImagesGrid } from '@/app/docs/in-view/in-view-images-grid';
-import { InfiniteSliderHoverSpeed } from '@/app/docs/infinite-slider/infinite-slider-hover-speed';
-import { Cursor1 } from '@/app/docs/cursor/cursor-1';
-import { SegmentedControl } from '@/app/docs/animated-background/segmented-control';
-import { TextLoopBasic } from './docs/text-loop/text-loop-basic';
-import { TextShimmerBasic } from './docs/text-shimmer/text-shimmer-basic';
-import { BorderTrailCard1 } from './docs/border-trail/border-trail-card-1';
-import { TextEffectSpeed } from './docs/text-effect/text-effect-speed';
-import { TextScrambleBasic } from './docs/text-scramble/text-scramble-basic';
-import MainNav from '@/components/website/main-nav';
 import { Features } from '@/components/section/features';
+import { MainFeatures } from '@/components/section/mainfeature';
 
 function Button({
   children,
@@ -44,18 +31,18 @@ function Button({
 export default function Motion() {
   return (
     <>
-      <MainNav />
       <div className='px-6 py-4 pb-20'>
-        <section className='flex h-full flex-col justify-center pt-10 dark:border-white/10 border-b pb-10'>
+        <section className='flex h-full flex-col justify-center border-b pb-10 pt-10 dark:border-white/10'>
           <span className='mb-4 mt-2 text-start text-xs text-zinc-500 dark:text-zinc-400 md:text-sm'>
-          Free regular updates and new components added.
+            Free regular updates and new components added.
           </span>
           <div className='flex w-full max-w-xl flex-col items-center justify-center text-start'>
             <h1 className='relative mb-4 text-4xl font-medium text-zinc-950 dark:text-zinc-50'>
-            UI kit for faster creation of stunning, animated interfaces.
+              UI kit for faster creation of stunning, animated interfaces.
             </h1>
             <p className='text-start text-zinc-600 dark:text-zinc-200'>
-            Beautiful components. Copy-paste ready, customizable, open-source, and designed for engineers and designers.
+              Beautiful components. Copy-paste ready, customizable, open-source,
+              and designed for engineers and designers.
             </p>
           </div>
           <div className='flex items-center space-x-4 py-6'>
@@ -80,6 +67,10 @@ export default function Motion() {
         <section>
           <Features />
         </section>
+        <section>
+          <MainFeatures />
+        </section>
+
       </div>
     </>
   );

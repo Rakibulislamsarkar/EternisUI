@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { ThemeProvider } from '@/components/website/theme-provider';
 import { GeistMono } from 'geist/font/mono';
+import { SiteFooter } from '@/components/website/site-footer';
+import MainNav from '@/components/website/main-nav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +35,11 @@ export default function RootLayout({
         className={`${inter.className} ${GeistMono.variable} bg-white dark:bg-zinc-950`}
       >
         <ThemeProvider attribute='class'>
-          <div className='isolate min-h-screen'>{children}</div>
+          <div data-wrapper='' className='border-grid flex flex-1 flex-col'>
+            <MainNav />
+            <main className='flex flex-1 flex-col'>{children}</main>
+            <SiteFooter />
+          </div>
         </ThemeProvider>
       </body>
     </html>
