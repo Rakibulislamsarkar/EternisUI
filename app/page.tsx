@@ -4,6 +4,7 @@ import GitHubIcon from '@/components/website/icons/github';
 import { ChevronRight } from 'lucide-react';
 import { Features } from '@/components/section/features';
 import { MainFeatures } from '@/components/section/mainfeature';
+import { ExamplesNav } from '@/components/section/examples-nav';
 
 function Button({
   children,
@@ -68,7 +69,13 @@ export default function Motion() {
           <Features />
         </section>
         <section>
-          <MainFeatures />
+        <div className="border-grid border-b">
+        <div className="container-wrapper">
+          <div className="container py-4">
+            <ExamplesNav className="[&>a:first-child]:text-primary" />
+          </div>
+        </div>
+      </div>
         </section>
 
       </div>

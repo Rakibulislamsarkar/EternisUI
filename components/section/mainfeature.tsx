@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/registry/ui/button";
-import { cn } from "@/lib/utils";
 import {
   FloatingActionPanelRoot,
   FloatingActionPanelTrigger,
@@ -107,16 +106,11 @@ export function MainFeatures() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <Link href={"/docs"}>
-            <Button variant="outline" className="rounded-full mb-4">
-              Components
-            </Button>
-          </Link>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">
+          <h2 className="text-3xl tracking-tight sm:text-5xl mb-4">
             Everything you need to build modern apps
           </h2>
-          <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            PrismUI provides a comprehensive set of UI components and features
+          <p className="text-base text-zinc-500 dark:text-zinc-400 leading-5 max-w-[700px] mx-auto">
+            EternisUI provides a comprehensive set of UI components and features
             to help you build beautiful, responsive, and accessible
             applications.
           </p>
