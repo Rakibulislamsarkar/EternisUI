@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="border-grid border-t dark:border-white/10 py-6 md:px-8 md:py-0">
       <div className="container-wrapper">
         <div className="container py-4">
-          <div className="text-balance text-center text-sm leading-loose text-gray-300 md:text-left">
+          <div className="text-balance text-center text-sm leading-loose text-zinc-500 dark:text-zinc-400 md:text-left">
             Built by{" "}
             <a
               href={siteConfig.links.twitter}

@@ -3,7 +3,6 @@ import React from 'react';
 import GitHubIcon from '@/components/website/icons/github';
 import { ChevronRight } from 'lucide-react';
 import { Features } from '@/components/section/features';
-import { MainFeatures } from '@/components/section/mainfeature';
 import { ExamplesNav } from '@/components/section/examples-nav';
 import DisplayCardsDemo from './examples/display-cards/page';
 import Image from 'next/image';
