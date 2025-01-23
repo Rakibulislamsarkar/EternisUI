@@ -19,7 +19,7 @@ interface LogoColumnProps {
 }
 
 // Main component
-export function LogoCarousel({ columns = 2 }: { columns?: number }) {
+export default function LogoCarousel({ columns = 2 }: { columns?: number }) {
   const [logoColumns, setLogoColumns] = useState<Logo[][]>([]);
   const [time, setTime] = useState(0);
   const CYCLE_DURATION = 2000; // 2 seconds per logo
@@ -109,7 +109,7 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
       <AnimatePresence mode="wait">
         <motion.div
           key={`${currentLogo.id}-${currentIndex}`}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-md"
           initial={{ y: "10%", opacity: 0 }}
           animate={{
             y: "0%",

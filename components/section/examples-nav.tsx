@@ -7,49 +7,31 @@ import { cn } from "@/lib/utils"
 import { ScrollArea, ScrollBar } from "@/components/registry/ui/scroll-area"
 
 const examples = [
-  {
-    name: "Mail",
-    href: "/examples/mail",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/mail",
-    hidden: false,
-  },
-  {
-    name: "Dashboard",
-    href: "/examples/dashboard",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/dashboard",
-    hidden: false,
-  },
-  {
-    name: "Tasks",
-    href: "/examples/tasks",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/tasks",
-    hidden: false,
-  },
-  {
-    name: "Playground",
-    href: "/examples/playground",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/playground",
-    hidden: false,
-  },
-  {
-    name: "Forms",
-    href: "/examples/forms",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/forms",
-    hidden: false,
-  },
-  {
-    name: "Music",
-    href: "/examples/music",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/music",
-    hidden: false,
-  },
-  {
-    name: "Authentication",
-    href: "/examples/authentication",
-    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/authentication",
-    hidden: false,
-  },
-]
+    // {
+    //   name: 'Cards',
+    //   href: '/examples/mail',
+    //   code: 'https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/mail',
+    //   hidden: false,
+    // },
+    {
+      name: 'Expandables',
+      href: '/examples/expandables',
+      code: 'https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/dashboard',
+      hidden: false,
+    },
+    {
+      name: 'Panel',
+      href: '/examples/panel',
+      code: 'https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/tasks',
+      hidden: false,
+    },
+    {
+      name: 'Carousel',
+      href: '/examples/carousel',
+      code: 'https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/playground',
+      hidden: false,
+    },
+  ];
 
 interface ExamplesNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -61,7 +43,7 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
       <ScrollArea className="max-w-[600px] lg:max-w-none">
         <div className={cn("flex items-center", className)} {...props}>
           <ExampleLink
-            example={{ name: "Examples", href: "/", code: "", hidden: false }}
+            example={{ name: "Cards", href: "/", code: "", hidden: false }}
             isActive={pathname === "/"}
           />
           {examples.map((example) => (

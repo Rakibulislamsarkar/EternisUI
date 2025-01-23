@@ -1,12 +1,15 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
-import React from 'react';
-import GitHubIcon from '@/components/website/icons/github';
-import { ChevronRight } from 'lucide-react';
-import { Features } from '@/components/section/features';
-import { MainFeatures } from '@/components/section/mainfeature';
+
 import { ExamplesNav } from '@/components/section/examples-nav';
-import DisplayCardsDemo from './examples/display-cards/page';
-import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
+import GitHubIcon from '@/components/website/icons/github';
+import { Features } from '@/components/section/features';
+
+export const metadata: Metadata = {
+  title: 'Examples',
+  description: 'Check out some examples app built using the components.',
+};
 
 function Button({
   children,
@@ -31,7 +34,11 @@ function Button({
   );
 }
 
-export default function Motion() {
+export default function ExamplesLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <div className='px-6 py-4 pb-20'>
@@ -68,40 +75,22 @@ export default function Motion() {
           </div>
         </section>
         <section>
-          <Features />
+            <Features />
         </section>
-        <section>
-          <div className='border-grid border-b'>
-            <div className='container-wrapper'>
-              <div className='container py-4'>
-                <ExamplesNav className='[&>a:first-child]:text-primary' />
-              </div>
+        <div className='border-grid border-b'>
+          <div className='container-wrapper'>
+            <div className='container py-4'>
+              <ExamplesNav />
             </div>
           </div>
-          <div className="container-wrapper">
-        <div className="container py-6">
-          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-            <Image
-              src="/examples/cards-light.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="block dark:hidden"
-            />
-            <Image
-              src="/examples/cards-dark.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="hidden dark:block"
-            />
-          </section>
-          <section className="hidden md:block [&>div]:p-0">
-            <DisplayCardsDemo />
-          </section>
         </div>
-      </div>
-        </section>
+        <div className='container-wrapper'>
+          <div className='container py-6'>
+            <section className='bg-background overflow-hidden rounded-[0.5rem] border shadow'>
+              {children}
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );

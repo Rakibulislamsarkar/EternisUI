@@ -29,6 +29,7 @@ import {
   TooltipTrigger,
 } from "@/components/registry/ui/tooltip";
 import { useExpandable } from "@/hooks/use-expandable";
+import GitHubIcon from "@/components/website/icons/github";
 
 interface ProjectStatusCardProps {
   title: string;
@@ -72,7 +73,7 @@ export function ProjectStatusCard({
 
   return (
     <Card
-      className="w-full max-w-md cursor-pointer transition-all duration-300 hover:shadow-lg"
+      className="w-full max-w-md cursor-pointer transition-all duration-300 hover:shadow-lg bg-white"
       onClick={toggleExpand}
     >
       <CardHeader className="space-y-1">
@@ -93,8 +94,8 @@ export function ProjectStatusCard({
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button size="icon" variant="outline" className="h-8 w-8">
-                  <Github className="h-4 w-4" />
+                <Button size="icon"  className="h-8 w-8">
+                  <GitHubIcon className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -160,7 +161,7 @@ export function ProjectStatusCard({
                                   <AvatarImage
                                     src={
                                       contributor.image ||
-                                      `/placeholder.svg?height=32&width=32&text=${contributor.name[0]}`
+                                      `/avatar/01.png=${contributor.name[0]}`
                                     }
                                     alt={contributor.name}
                                   />
@@ -194,7 +195,7 @@ export function ProjectStatusCard({
                     </div>
 
                     <div className="space-y-2">
-                      <Button className="w-full">
+                      <Button className="w-full bg-black text-white">
                         <MessageSquare className="h-4 w-4 mr-2" />
                         View Discussion
                       </Button>
