@@ -11,7 +11,7 @@ export function SiteFooter() {
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
-              className="font-medium  underline-offset-4"
+              className="font-medium underline underline-offset-4"
             >
               rakibul islam sarkar
             </a>
