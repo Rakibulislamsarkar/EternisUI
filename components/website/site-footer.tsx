@@ -9,7 +9,7 @@ export function SiteFooter() {
             Built by{" "}
             <a
               href={siteConfig.links.twitter}
-              target="_blank'
+              target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
