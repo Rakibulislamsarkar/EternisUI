@@ -1,11 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Script from 'next/script';
 import { ThemeProvider } from '@/components/website/theme-provider';
 import { GeistMono } from 'geist/font/mono';
 import { SiteFooter } from '@/components/website/site-footer';
 import MainNav from '@/components/website/main-nav';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +30,9 @@ export default function RootLayout({
         <ThemeProvider attribute='class'>
           <div data-wrapper='' className='border-grid flex flex-1 flex-col'>
             <MainNav />
-            <main className='flex flex-1 flex-col'>{children}</main>
+            <main className='flex flex-1 flex-col'>{children}
+            <Analytics />
+            </main>
             <SiteFooter />
           </div>
         </ThemeProvider>
