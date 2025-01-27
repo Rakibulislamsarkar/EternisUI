@@ -1,25 +1,22 @@
-import * as React from 'react';
-import type { SVGProps } from 'react';
+import * as React from "react"
+import type { SVGProps } from "react"
 
 export function EternisLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      role='img'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 70 70'
-      aria-label='MP Logo'
-      width={70}
-      height={70}
-      className='text-zinc-950 dark:text-white'
-      fill='none'
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      aria-label="Eternis Logo"
+      className="text-zinc-950 dark:text-white"
       {...props}
     >
-      <path
-        stroke='currentColor'
-        strokeLinecap='round'
-        strokeWidth={3}
-        d='M51.883 26.495c-7.277-4.124-18.08-7.004-26.519-7.425-2.357-.118-4.407-.244-6.364 1.06M59.642 51c-10.47-7.25-26.594-13.426-39.514-15.664-3.61-.625-6.744-1.202-9.991.263'
-      />
+      <g transform="translate(50 50) rotate(-35) translate(-50 -50)">
+        <rect x="45" y="33" width="61" height="8" rx="10" fill="currentColor" />
+        <rect x="30" y="47" width="61" height="8" rx="10" fill="currentColor" />
+        <rect x="15" y="63" width="61" height="8" rx="10" fill="currentColor" />
+      </g>
     </svg>
-  );
+  )
 }
+
