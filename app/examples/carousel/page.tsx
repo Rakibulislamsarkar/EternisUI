@@ -1,28 +1,31 @@
-"use client";
+"use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import type { SVGProps } from "react";
-import Image from "next/image";
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 
 // Define types
 interface Logo {
-  id: number;
-  name: string;
-  src: string;
+  id: number
+  name: string
+  src: string
 }
 
 interface LogoColumnProps {
-  logos: Logo[];
-  columnIndex: number;
-  currentTime: number;
+  logos: Logo[]
+  columnIndex: number
+  currentTime: number
+}
+
+interface CarouselProps {
+  columns?: number
 }
 
 // Main component
-export default function LogoCarousel({ columns = 2 }: { columns?: number }) {
-  const [logoColumns, setLogoColumns] = useState<Logo[][]>([]);
-  const [time, setTime] = useState(0);
-  const CYCLE_DURATION = 2000; // 2 seconds per logo
+export default function LogoCarousel({ columns = 2 }: CarouselProps) {
+  const [logoColumns, setLogoColumns] = useState<Logo[][]>([])
+  const [time, setTime] = useState(0)
+  const CYCLE_DURATION = 2000 // 2 seconds per logo
 
   // Define logos using public SVGs
   const logos = useMemo<Logo[]>(
@@ -33,67 +36,61 @@ export default function LogoCarousel({ columns = 2 }: { columns?: number }) {
       { id: 4, name: "Resend", src: "/logo/resend.svg" },
       { id: 5, name: "Shadcn", src: "/logo/shadcn.svg" },
     ],
-    []
-  );
+    [],
+  )
 
   // Distribute logos across columns
   const distributeLogos = useCallback(
     (logos: Logo[]) => {
-      const shuffled = [...logos].sort(() => Math.random() - 0.5);
-      const result: Logo[][] = Array.from({ length: columns }, () => []);
+      const shuffled = [...logos].sort(() => Math.random() - 0.5)
+      const result: Logo[][] = Array.from({ length: columns }, () => [])
 
       shuffled.forEach((logo, index) => {
-        result[index % columns].push(logo);
-      });
+        result[index % columns].push(logo)
+      })
 
       // Ensure equal length columns
-      const maxLength = Math.max(...result.map((col) => col.length));
+      const maxLength = Math.max(...result.map((col) => col.length))
       result.forEach((col) => {
         while (col.length < maxLength) {
-          col.push(shuffled[Math.floor(Math.random() * shuffled.length)]);
+          col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
         }
-      });
+      })
 
-      return result;
+      return result
     },
-    [columns]
-  );
+    [columns],
+  )
 
   // Initialize logo columns
   useEffect(() => {
-    setLogoColumns(distributeLogos(logos));
-  }, [logos, distributeLogos]);
+    setLogoColumns(distributeLogos(logos))
+  }, [logos, distributeLogos])
 
   // Update time for animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prev) => prev + 100);
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
+      setTime((prev) => prev + 100)
+    }, 100)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="flex justify-center gap-4 py-8">
       {logoColumns.map((columnLogos, index) => (
-        <LogoColumn
-          key={index}
-          logos={columnLogos}
-          columnIndex={index}
-          currentTime={time}
-        />
+        <LogoColumn key={index} logos={columnLogos} columnIndex={index} currentTime={time} />
       ))}
     </div>
-  );
+  )
 }
 
 // Column component
 function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
-  const CYCLE_DURATION = 2000;
-  const columnDelay = columnIndex * 200;
-  const adjustedTime =
-    (currentTime + columnDelay) % (CYCLE_DURATION * logos.length);
-  const currentIndex = Math.floor(adjustedTime / CYCLE_DURATION);
-  const currentLogo = logos[currentIndex];
+  const CYCLE_DURATION = 2000
+  const columnDelay = columnIndex * 200
+  const adjustedTime = (currentTime + columnDelay) % (CYCLE_DURATION * logos.length)
+  const currentIndex = Math.floor(adjustedTime / CYCLE_DURATION)
+  const currentLogo = logos[currentIndex]
 
   return (
     <motion.div
@@ -127,7 +124,7 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
           }}
         >
           <Image
-            src={currentLogo.src}
+            src={currentLogo.src || "/placeholder.svg"}
             alt={currentLogo.name}
             width={120}
             height={40}
@@ -136,5 +133,6 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
         </motion.div>
       </AnimatePresence>
     </motion.div>
-  );
+  )
 }
+
