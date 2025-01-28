@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --scrollbar-color: rgba(0, 0, 0, 0.3);
+  --card: 0 0% 100%;
+  --primary: 0 0% 9%;
 
   /* shiki theme noir */
   --shiki-foreground: #ffffff;
@@ -22,6 +26,7 @@
 
 :root.dark {
   --scrollbar-color: rgba(255, 255, 255, 0.3);
+  --primary: 0 0% 98%;
 }
 
 html {

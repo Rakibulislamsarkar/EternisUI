@@ -3,9 +3,68 @@ import React from 'react';
 import GitHubIcon from '@/components/website/icons/github';
 import { ChevronRight } from 'lucide-react';
 import { Features } from '@/components/section/features';
-import { ExamplesNav } from '@/components/section/examples-nav';
-import DisplayCardsDemo from './examples/display-cards/page';
 import Image from 'next/image';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/registry/ui/card';
+import { SubscribeBottom } from '@/components/section/subscribe-form';
+
+type TestimonialProps = {
+  name: string;
+  role: string;
+  content: string;
+  avatarUrl: string;
+};
+
+const testimonials: TestimonialProps[] = [
+  {
+    name: 'Sarah Chen',
+    role: 'Senior Developer',
+    content:
+      'This UI library has saved me countless hours. The components are well-designed and the documentation is excellent.',
+    avatarUrl: '/avatar/01.png',
+  },
+  {
+    name: 'Alex Thompson',
+    role: 'Tech Lead',
+    content:
+      'The accessibility features are top-notch. Every component works perfectly with screen readers and keyboard navigation.',
+    avatarUrl: '/avatar/02.png',
+  },
+  {
+    name: 'Maria Garcia',
+    role: 'Frontend Engineer',
+    content:
+      'The customization options are incredible. I can easily match our brand guidelines without sacrificing functionality.',
+    avatarUrl: '/avatar/03.png',
+  },
+];
+
+function TestimonialCard({ name, role, content, avatarUrl }: TestimonialProps) {
+  return (
+    <Card>
+      <CardHeader>
+        <div className='flex items-center gap-4'>
+          <img
+            alt={`${name}'s avatar`}
+            className='rounded-full'
+            height='40'
+            src={avatarUrl || '/avatar/01.png'}
+            width='40'
+          />
+          <div className='flex flex-col'>
+            <CardTitle className='text-base'>{name}</CardTitle>
+            <p className='text-zinc-500 dark:text-zinc-400 text-xs'>{role}</p>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className='text-sm'>{content}</CardContent>
+    </Card>
+  );
+}
 
 function Button({
   children,
@@ -70,37 +129,44 @@ export default function Motion() {
           <Features />
         </section>
         <section>
-          <div className='border-grid border-b'>
-            <div className='container-wrapper'>
-              <div className='container py-4'>
-                <ExamplesNav className='[&>a:first-child]:text-primary' />
-              </div>
+          <div className='container-wrapper'>
+            <div className='container py-6'>
+              <section className='bg-background overflow-hidden rounded-lg border shadow-md md:hidden md:shadow-xl'>
+                <Image
+                  src='/examples/cards-light.png'
+                  width={1280}
+                  height={1214}
+                  alt='Cards'
+                  className='block dark:hidden'
+                />
+                <Image
+                  src='/examples/cards-dark.png'
+                  width={1280}
+                  height={1214}
+                  alt='Cards'
+                  className='hidden dark:block'
+                />
+              </section>
             </div>
           </div>
-          <div className="container-wrapper">
-        <div className="container py-6">
-          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-            <Image
-              src="/examples/cards-light.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="block dark:hidden"
-            />
-            <Image
-              src="/examples/cards-dark.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="hidden dark:block"
-            />
-          </section>
-          <section className="hidden md:block [&>div]:p-0">
-            <DisplayCardsDemo />
-          </section>
-        </div>
-      </div>
         </section>
+        {/* Testimonials Section */}
+        <section className='container py-8 md:py-1 lg:py-2'>
+          <div className='flex flex-col  justify-center gap-4'>
+            <h2 className='font-heading text-3xl leading-[1.1] tracking-tight sm:text-4xl md:text-6xl'>
+              Loved by developers
+            </h2>
+            <p className='max-w-[85%] leading-normal sm:text-base sm:leading-7'>
+              Here's what our community has to say about our components.
+            </p>
+          </div>
+          <div className='grid grid-cols-1 gap-4 py-8 md:grid-cols-3 md:gap-8'>
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard key={index} {...testimonial} />
+            ))}
+          </div>
+        </section>
+        <SubscribeBottom />
       </div>
     </>
   );
