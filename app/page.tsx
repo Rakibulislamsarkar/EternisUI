@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import GitHubIcon from '@/components/website/icons/github';
 import { ChevronRight } from 'lucide-react';
 import { Features } from '@/components/section/features';
 import Image from 'next/image';
@@ -114,13 +113,12 @@ export default function Motion() {
               </Button>
             </Link>
             <a
-              href='https://github.com/Rakibulislamsarkar/EternisUI'
+              href='https://rsblocks.vercel.app/'
               target='_blank'
               rel='noopener noreferrer'
             >
               <Button variant='secondary'>
-                <GitHubIcon className='mr-1.5 h-4 w-4 fill-white dark:fill-zinc-950' />
-                Star on GitHub
+                Custom Blocks
               </Button>
             </a>
           </div>
